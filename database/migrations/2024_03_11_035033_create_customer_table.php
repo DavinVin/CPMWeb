@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('customer_name', 40);
             $table->string('lokasi', 70);
-            $table->string('nomor_telepon', 15);
+            $table->string('nomor_telepon', 12);
             $table->timestamps();
         });
     }

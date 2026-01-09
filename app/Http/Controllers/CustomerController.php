@@ -25,7 +25,7 @@ class CustomerController extends Controller
             [
                 "customer_name"=>"required|string|max:40",
                 "lokasi"=>"required|string|max:70",
-                "nomor_telepon"=>"required|string|max:15",
+                "nomor_telepon"=> "required|regex:/^[0-9]+$/|digits_between:11,12",
             ],
             [
                 'customer_name.required' => 'Nama pelanggan wajib diisi.',
@@ -33,7 +33,7 @@ class CustomerController extends Controller
                 'lokasi.required' => 'Lokasi wajib diisi.',
                 'lokasi.max' => 'Lokasi tidak boleh lebih dari 50 karakter.',
                 'nomor_telepon.required' => 'Nomor telepon wajib diisi.',
-                'nomor_telepon.max' => 'Nomor telepon tidak boleh lebih dari 15 karakter.',
+                'nomor_telepon.digits_between' => 'Nomor telepon minimal 11 karakter dan tidak boleh lebih dari 12 karakter.',
             ]);
 
 
@@ -60,7 +60,7 @@ class CustomerController extends Controller
             [
                 "customer_name"=>"required|string|max:40",
                 "lokasi"=>"required|string|max:70",
-                "nomor_telepon"=>"required|string|max:15",
+                "nomor_telepon"=> "required|regex:/^[0-9]+$/|digits_between:11,12",
             ],
             [
                 'customer_name.required' => 'Nama pelanggan wajib diisi.',
@@ -68,7 +68,7 @@ class CustomerController extends Controller
                 'lokasi.required' => 'Lokasi wajib diisi.',
                 'lokasi.max' => 'Lokasi tidak boleh lebih dari 50 karakter.',
                 'nomor_telepon.required' => 'Nomor telepon wajib diisi.',
-                'nomor_telepon.max' => 'Nomor telepon tidak boleh lebih dari 15 karakter.',
+                'nomor_telepon.digits_between' => 'Nomor telepon minimal 11 karakter dan tidak boleh lebih dari 12 karakter.',
             ]);
 
             try{

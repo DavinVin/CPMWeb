@@ -49,7 +49,15 @@
 
                     <div class="form-group">
                         <label for="inputTelepon">Nomor Telepon</label>
-                        <input type="tel" class="form-control" id="inputTelepon" name="nomor_telepon" placeholder="Masukkan Nomor Telepon">
+                        <input type="tel" 
+                            class="form-control" 
+                            id="inputTelepon" 
+                            name="nomor_telepon" 
+                            placeholder="Masukkan Nomor Telepon"
+                            minlength="1" 
+                            maxlength="14" 
+                            pattern="[0-9]+"
+                            required> 
                     </div>
 
                     <!-- <div class="form-check">
