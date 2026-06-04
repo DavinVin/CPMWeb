@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════
+   CSS VARIABLES — CPM Brand
+   (Sumber: desain original)
+══════════════════════════════ */
+:root {
+  --navy:       #17176b;
+  --navy-dark:  #0e0e4a;
+  --navy-mid:   #1c1c7a;
+  --navy-light: #22228a;
+  --gold:       #f5a623;
+  --gold-dark:  #d4891a;
+  --white:      #ffffff;
+  --off-white:  #f5f6fb;
+  --text:       #1a1a2e;
+  --text-muted: #555;
+  --radius:     12px;
+  --radius-lg:  18px;
+}
+
+/* ══════════════════════════════
+   BASE RESET
+══════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-opensans), 'Open Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ══════════════════════════════
+   PLACEHOLDER IMAGE HELPER
+   Digunakan sampai foto asli tersedia
+══════════════════════════════ */
+.ph {
+  background: linear-gradient(135deg, #2a2a8a 0%, #1a1a5a 50%, #0e0e3a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.ph::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px,
+      transparent 1px, transparent 12px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px,
+      transparent 1px, transparent 12px
+    );
+}
+
+.ph-label {
+  position: relative;
+  z-index: 1;
+  color: rgba(255,255,255,0.35);
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 8px;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════
+   SHARED TYPOGRAPHY
+══════════════════════════════ */
+.section-tag {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.section-heading {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.05;
+  color: var(--navy);
+}
+
+.section-heading.white {
+  color: var(--white);
+}
+
+/* ══════════════════════════════
+   SHARED BUTTONS
+══════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  padding: 13px 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.18s, background 0.18s, box-shadow 0.18s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy-dark);
+}
+
+.btn-gold:hover {
+  background: var(--gold-dark);
+}
+
+.btn-navy {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn-navy:hover {
+  background: var(--navy-mid);
+}
+
+/* ══════════════════════════════
+   FIX LAYOUT HERO SECTION 
+══════════════════════════════ */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Membagi 2 kolom kiri-kanan sejajar */
+  gap: 48px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Memastikan frame gambar mengambil ruang penuh dan sejajar vertikal */
+.hero-right-col {
+  width: 100%;
+  display: block;
+}
+
+/* Responsive breakpoint agar di mobile kembali menumpuk 1 kolom */
+@media (max-width: 900px) {
+  .hero-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .hero-right-col { 
+    display: none; /* Sesuai desain awal: sembunyikan gambar di mobile */
+  }
+}
+
+@media (max-width: 680px) {
+  #home { 
+    padding: 100px 4% 60px; 
+  }
+}
