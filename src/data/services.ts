@@ -4,6 +4,7 @@ export interface Service {
   description: string
   photoLabel:  string   // teks placeholder — ganti dengan path foto asli nanti
   iconPath:    string   // SVG path d=""
+  imageUrl?:    string
 }
 
 export const services: Service[] = [
@@ -15,6 +16,8 @@ export const services: Service[] = [
       'tanah merah, humus, pasir urug, pasir kasar, batu anderla, batu bujang dan batu krokos.',
     photoLabel:  'FOTO PEKERJAAN\nTANAH',
     iconPath:    'M4 20h16v-2H4v2zm0-4h16v-2H4v2zm0-4h16V10H4v2zm0-8v2h16V4H4z',
+    imageUrl:    '/images/tanah.png',
+    
   },
   {
     id:          'pagar',

@@ -25,12 +25,20 @@ export default function BusinessSection() {
             <div className="svc-card">
               {/* Photo + icon ring */}
               <div style={{ position: 'relative', flexShrink: 0 }}>
-                <div className="ph svc-img">
-                  <span className="ph-label" style={{ whiteSpace: 'pre-line' }}>
-                    {svc.photoLabel}
-                  </span>
-                </div>
-
+                {svc.imageUrl ? (
+                  <img 
+                    src={svc.imageUrl} 
+                    alt={svc.title} 
+                    className="svc-img" 
+                    style={{ objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div className="ph svc-img">
+                    <span className="ph-label" style={{ whiteSpace: 'pre-line' }}>
+                      {svc.photoLabel}
+                    </span>
+                  </div>
+                )}
                 {/* Floating icon ring */}
                 <div style={{
                   position:        'absolute',
