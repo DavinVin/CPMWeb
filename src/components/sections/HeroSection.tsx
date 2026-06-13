@@ -11,7 +11,7 @@ export default function HeroSection() {
         display:        'flex',
         flexDirection:  'column',
         justifyContent: 'center',
-        padding:        '120px 6% 80px',
+        padding:        '120px 2rem 80px',
         position:       'relative',
         overflow:       'hidden',
       }}
@@ -31,7 +31,7 @@ export default function HeroSection() {
       }} />
 
       {/* FIX: Mengunci layout menggunakan Utility Class Tailwind murni agar tidak hancur oleh styled-jsx */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-[1200px] mx-auto w-full z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-[1440px] mx-auto w-full z-10">
         {/* LEFT */}
         <div>
           <Reveal delay={0}>
@@ -142,8 +142,11 @@ export default function HeroSection() {
 
       {/* Tetap mempertahankan sisa style bawaan lainnya jika dibutuhkan */}
       <style jsx global>{`
+        @media (max-width: 900px) {
+          #home { padding: 100px 1.5rem 60px !important; }
+        }
         @media (max-width: 680px) {
-          #home { padding: 100px 4% 60px; }
+          #home { padding: 100px 1rem 60px !important; }
         }
       `}</style>
     </section>

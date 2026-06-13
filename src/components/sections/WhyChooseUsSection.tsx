@@ -31,7 +31,16 @@ export default function WhyChooseUsSection() {
   return (
     <section
       id="why"
-      style={{ padding: '96px 6%', background: 'var(--white)' }}
+      style={{ 
+        // 1. FIX PADDING: Ubah padding horizontal dari 6% menjadi 1.5rem (fixed) agar ruang tidak terbuang di desktop
+        padding: '96px 1.5rem', 
+        background: 'var(--white)',
+        
+        // 2. LOCK WIDTH: Kunci lebar maksimal section ini di 1440px agar sejajar dengan batas Navbar atas
+        maxWidth: '1440px',
+        margin: '0 auto',
+        width: '100%'
+      }}
     >
       {/* Heading */}
       <Reveal style={{ marginBottom: '52px' }}>
@@ -48,46 +57,23 @@ export default function WhyChooseUsSection() {
       <div className="why-layout">
         {/* CPM logo mark */}
         <Reveal className="why-logo-col">
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{
-              width:        '260px', height: '260px',
-              borderRadius: '50%',
-              background:   'var(--navy)',
+              width:        '260px', 
+              height:       '260px',
               display:      'flex',
               alignItems:   'center',
               justifyContent: 'center',
-              boxShadow:    '0 20px 60px rgba(23,23,107,0.3)',
             }}>
-              <div style={{
-                display:             'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gridTemplateRows:    '1fr 1fr',
-                width:               '190px', height: '190px',
-                gap:                 '4px',
-              }}>
-                {/* C */}
-                <div style={{
-                  background:     'var(--navy-dark)', borderRadius: '50%',
-                  display:        'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily:     'var(--font-montserrat), Montserrat, sans-serif',
-                  fontWeight:     900, color: 'var(--white)', fontSize: '1.9rem',
-                }}>C</div>
-                {/* P */}
-                <div style={{
-                  background:     'var(--navy-dark)', borderRadius: '50%',
-                  display:        'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily:     'var(--font-montserrat), Montserrat, sans-serif',
-                  fontWeight:     900, color: 'var(--white)', fontSize: '1.9rem',
-                }}>P</div>
-                {/* M — spans full width */}
-                <div style={{
-                  gridColumn:     '1 / 3',
-                  background:     'var(--navy-dark)', borderRadius: '40px',
-                  display:        'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily:     'var(--font-montserrat), Montserrat, sans-serif',
-                  fontWeight:     900, color: 'var(--white)', fontSize: '2rem',
-                }}>M</div>
-              </div>
+              <img 
+                src="/images/logo-cpm.png" 
+                alt="Logo PT Catur Putra Manggala" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'contain' 
+                }} 
+              />
             </div>
           </div>
         </Reveal>
@@ -154,12 +140,13 @@ export default function WhyChooseUsSection() {
       <style jsx global>{`
         .why-layout {
           display: grid;
-          grid-template-columns: 1fr 1.5fr;
-          gap: 52px;
+          /* Menggunakan 260px untuk logo dan sisa ruang penuh (1fr) diberikan ke kotak kanan */
+          grid-template-columns: 260px 1fr; 
+          gap: 60px; 
           align-items: center;
-          max-width: 1200px;
-          margin: 0 auto;
+          width: 100%;
         }
+        
         .why-point { transition: background 0.2s; }
         .why-point:hover { background: rgba(255,255,255,0.04); }
 
@@ -167,8 +154,10 @@ export default function WhyChooseUsSection() {
           .why-layout { grid-template-columns: 1fr; }
           .why-logo-col { display: none; }
         }
+        
         @media (max-width: 680px) {
-          #why { padding: 64px 4%; }
+          /* Di layar HP Android, padding disesuaikan agar tetap proporsional */
+          #why { padding: 64px 1rem !important; }
         }
       `}</style>
     </section>

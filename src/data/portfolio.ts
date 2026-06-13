@@ -1,7 +1,7 @@
 export interface PortfolioPhoto {
   label: string  // teks placeholder — ganti src: string saat foto asli tersedia
-  // src?: string  // uncomment dan isi path foto asli nanti
-  // alt?: string
+  src?: string  // uncomment dan isi path foto asli nanti
+  alt?: string
 }
 
 export interface PortfolioGroup {
@@ -17,8 +17,8 @@ export const portfolioGroups: PortfolioGroup[] = [
     title:  'Pertamina Gas di Cambai,',
     bold:   'Prabumulih.',
     photos: [
-      { label: 'FOTO PROYEK\nPERTAMINA 1' },
-      { label: 'FOTO PROYEK\nPERTAMINA 2' },
+      { label: 'FOTO PROYEK\nPERTAMINA 1', src: '/images/pertamina-1.png', alt: 'Proyek Pertamina Gas Cambai 1' },
+      { label: 'FOTO PROYEK\nPERTAMINA 2', src: '/images/pertamina-2.png', alt: 'Proyek Pertamina Gas Cambai 1' },
     ],
   },
   {
@@ -26,8 +26,8 @@ export const portfolioGroups: PortfolioGroup[] = [
     title:  'Tol',
     bold:   'Palembang–Betung.',
     photos: [
-      { label: 'FOTO PROYEK\nTOL 1' },
-      { label: 'FOTO PROYEK\nTOL 2' },
+      { label: 'FOTO PROYEK\nTOL 1', src: '/images/tol-1.png', alt: 'Proyek Pertamina Gas Cambai 1' },
+      { label: 'FOTO PROYEK\nTOL 2', src: '/images/tol-2.png', alt: 'Proyek Pertamina Gas Cambai 1' },
     ],
   },
   {
@@ -35,8 +35,8 @@ export const portfolioGroups: PortfolioGroup[] = [
     title:  'Berbagai Perusahaan Swasta di',
     bold:   'Sumatera Selatan.',
     photos: [
-      { label: 'FOTO SWASTA 1' },
-      { label: 'FOTO SWASTA 2' },
+      { label: 'FOTO SWASTA 1', src: '/images/swasta-1.png', alt: 'Proyek Pertamina Gas Cambai 1' },
+      { label: 'FOTO SWASTA 2', src: '/images/swasta-2.png', alt: 'Proyek Pertamina Gas Cambai 1' },
     ],
   },
   {
@@ -44,8 +44,8 @@ export const portfolioGroups: PortfolioGroup[] = [
     title:  'Stok Panel PT. CPM —',
     bold:   '200 Papan & 40 Tiang/Hari',
     photos: [
-      { label: 'FOTO STOK\nPANEL 1' },
-      { label: 'FOTO STOK\nPANEL 2' },
+      { label: 'FOTO STOK\nPANEL 1', src: '/images/stok-1.png', alt: 'Proyek Pertamina Gas Cambai 1' },
+      { label: 'FOTO STOK\nPANEL 2', src: '/images/stok-2.png', alt: 'Proyek Pertamina Gas Cambai 1' },
     ],
   },
 ]

@@ -48,10 +48,18 @@ export default function Navbar() {
           background: scrolled ? 'rgba(14,14,74,0.97)' : 'var(--navy-dark)',
           display:    'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          padding:    '0 6%',
+          
+          // KUNCI UTAMA MELAR TOTAL:
+          // Memaksa Logo CPM ke ujung kiri layar dan tautan Menu ke ujung kanan layar monitor
+          justifyContent: 'space-between', 
+          
+          // Menggunakan padding persen kecil agar konten aman berjarak manis di monitor raksasa
+          padding:    '0 4%', 
+          
           boxShadow:  '0 2px 20px rgba(0,0,0,0.35)',
           transition: 'background 0.3s',
+          width:      '100%',
+          boxSizing:  'border-box'
         }}
       >
         {/* Brand */}
@@ -138,7 +146,7 @@ export default function Navbar() {
           aria-label="Menu"
           className="hamburger show-mobile"
           style={{
-            display: 'none',   // controlled via CSS media query below
+            display: 'none',
             flexDirection: 'column',
             gap: '5px',
             background: 'none',
@@ -222,9 +230,13 @@ export default function Navbar() {
         .nav-link:hover { color: var(--gold) !important; }
         .nav-link:hover::after { transform: scaleX(1); }
 
-        @media (max-width: 680px) {
+        @media (max-width: 900px) {
           .hide-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
+          #navbar { padding: 0 1.5rem !important; }
+        }
+        @media (max-width: 680px) {
+          #navbar { padding: 0 1rem !important; }
         }
       `}</style>
     </>

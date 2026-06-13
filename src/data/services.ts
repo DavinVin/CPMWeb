@@ -27,6 +27,7 @@ export const services: Service[] = [
       'batu kali maupun batu-bata.',
     photoLabel:  'FOTO PAGAR\nPANEL BETON',
     iconPath:    'M3 3h18v2H3zm0 4h18v2H3zm0 4h18v2H3zm0 4h18v2H3zm0 4h18v2H3z',
+    imageUrl:    '/images/pagarbeton.png',
   },
   {
     id:          'alat-berat',
@@ -39,6 +40,7 @@ export const services: Service[] = [
       'M6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z' +
       'M19.5 9.5l1.96 2.5H17V9.5h2.5z' +
       'M18 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z',
+      imageUrl:    '/images/alatberat.png',
   },
   {
     id:          'konstruksi',
@@ -48,12 +50,13 @@ export const services: Service[] = [
       'dalam berbagai proyek pembangunan.',
     photoLabel:  'FOTO PROYEK\nKONSTRUKSI',
     iconPath:    'M12 3L2 12h3v8h6v-5h2v5h6v-8h3L12 3z',
+    imageUrl:    '/images/konstruksi.png',
   },
   {
     id:          'bengkel',
     title:       'Perbengkelan dan Perawatan Kendaraan',
     description:
-      'Pemeliharaan dan perawatan berbagai jenis kendaraan bermotor serta alat berat lainnya.',
+    'Pemeliharaan dan perawatan berbagai jenis kendaraan bermotor serta alat berat lainnya.',
     photoLabel:  'FOTO\nBENGKEL',
     iconPath:
       'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61' +
@@ -65,5 +68,6 @@ export const services: Service[] = [
       'c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22' +
       'l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58z' +
       'M12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z',
+      imageUrl:    '/images/perbengkelan.png',
   },
 ]

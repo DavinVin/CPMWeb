@@ -87,19 +87,40 @@ export default function PortfolioSection() {
                   <div
                     key={j}
                     style={{
-                      aspectRatio:  '16/9',
-                      borderRadius: '10px',
-                      overflow:     'hidden',
-                      border:       '1.5px solid rgba(255,255,255,0.1)',
-                      transition:   'transform 0.25s',
+                    aspectRatio:  '16/9',
+                        borderRadius: '10px',
+                        overflow:     'hidden',
+                        position:     'relative', // KUNCI UTAMA: agar tameng di dalam bisa melayang pas
+                        border:       'none',
+                        boxShadow:    '0 4px 15px rgba(0, 0, 0, 0.25)', 
+                        transition:   'transform 0.25s ease',
                     }}
                     className="port-photo"
                   >
-                    <div className="ph" style={{ width: '100%', height: '100%' }}>
-                      <span className="ph-label" style={{ whiteSpace: 'pre-line' }}>
-                        {photo.label}
-                      </span>
-                    </div>
+                      {photo.src ? (
+                      <img 
+                        src={photo.src} 
+                        alt={photo.alt || photo.label} 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                    ) : (
+                      <div className="ph" style={{ width: '100%', height: '100%' }}>
+                        <span className="ph-label" style={{ whiteSpace: 'pre-line' }}>
+                          {photo.label}
+                        </span>
+                      </div>
+                    )}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      border: '5px solid var(--navy)', // Border Navy fisik menimpa di atas
+                      borderRadius: '10px',
+                      pointerEvents: 'none',
+                      zIndex: 1, // Memaksa dia berdiri di lapisan paling depan
+                      }} />
                   </div>
                 ))}
               </div>
@@ -114,10 +135,13 @@ export default function PortfolioSection() {
           grid-template-columns: 280px 1fr;
           gap: 52px;
           align-items: start;
-          max-width: 1200px;
+          max-width: 1440px;
           margin: 0 auto;
         }
-        .port-photo:hover { transform: scale(1.03); }
+        .port-photo:hover { 
+          transform: scale(1.03); 
+          box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); 
+}
 
         @media (max-width: 900px) {
           .portfolio-layout { grid-template-columns: 1fr; }

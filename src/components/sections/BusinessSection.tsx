@@ -103,7 +103,7 @@ export default function BusinessSection() {
           display: grid;
           grid-template-columns: repeat(5, 1fr);
           gap: 18px;
-          max-width: 1200px;
+          max-width: 1440px;
           margin: 0 auto;
         }
         .svc-card {

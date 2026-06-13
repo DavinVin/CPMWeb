@@ -1203,6 +1203,9 @@ video {
 .max-w-\[1200px\] {
   max-width: 1200px;
 }
+.max-w-\[1440px\] {
+  max-width: 1440px;
+}
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1214,6 +1217,9 @@ video {
 }
 .gap-12 {
   gap: 3rem;
+}
+.gap-16 {
+  gap: 4rem;
 }
 .border {
   border-width: 1px;
@@ -1406,7 +1412,7 @@ a {
   grid-template-columns: 1fr 1fr; /* Membagi 2 kolom kiri-kanan sejajar */
   gap: 48px;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
 }
@@ -1432,7 +1438,33 @@ a {
     padding: 100px 4% 60px; 
   }
 }
+/* ════════════════════════════════════════════════════════════════
+   PUSAT KONTROL DESKTOP — LEBAR GLOBAL & SINKRONISASI NAVBAR
+   ════════════════════════════════════════════════════════════════ */
+@media (min-width: 901px) {
+  /* 1. Paksa PADDING semua seksi di desktop pakai ukuran piksel tetap (2rem / 32px)
+        Bukan pakai persen (%), supaya space kosong kiri-kanan langsung menciut 
+        dan konten melar sejajar pas dengan ujung Navbar atas kamu */
+  section, 
+  #home, 
+  #business, 
+  #portfolio, 
+  #why {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
 
+  /* 2. Paksa SEMUA LAYOUT GRID UTAMA di setiap seksi untuk melar serentak ke 1440px */
+  .hero-grid,
+  .services-grid,
+  .portfolio-layout,
+  .why-layout,
+  .container {
+    max-width: 1440px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+}
 @media (min-width: 768px) {
 
   .md\:block {
